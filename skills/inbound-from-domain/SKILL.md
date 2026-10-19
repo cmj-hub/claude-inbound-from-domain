@@ -67,7 +67,7 @@ Write one JSON route card:
 
 Copy these. Do not soften them.
 
-- **No CRM write-back in the free pack.** `crm_write` stays `false`. The route card is the artifact. A human (or Operator Pass tooling) owns the CRM upsert.
+- **No CRM write-back in the free pack.** `crm_write` stays `false`. The route card is the artifact. A human owns the CRM upsert.
 - **Free-mail is not Build.** Do not route `gmail.com` (and peers) to `build-review`.
 - **Disposable is disqualify.** Do not keep a temp inbox alive as `need-more`.
 - **Evidence is required.** A kind with no checkable fact is a guess, not enrichment.
@@ -117,8 +117,8 @@ Part of the GTM operator suite (`/plugin marketplace add cmj-hub/gtm-operator-sk
 
 - **Writes:** `gtm/inbound.json` only. Never touches `brand-config.json`. Never writes a CRM.
 - **Before this:** a form, reply, or lead with an email. qualify-before-enrich when list ICP fields fail before any paid lookup.
-- **After this:** a human reviews the route card. Operator Pass / Build Partnership owns CRM upsert and Slack HITL.
-- **Not this pack:** live Firecrawl / firmographic APIs, existing-customer CRM lookup, or auto-reply send. Those are compounding layers.
+- **After this:** a human reviews the route card and updates the CRM.
+- **Not this pack:** live Firecrawl / firmographic APIs, existing-customer CRM lookup, or auto-reply send. Those are out of scope for this pack.
 
 If a companion pack is not installed, name it and its install line (`/plugin install <name>@gtm-operator-skills`); do not do its job inline.
 
