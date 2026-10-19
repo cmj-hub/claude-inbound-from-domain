@@ -18,7 +18,7 @@ Or score the sample without an agent:
 
 ```bash
 python3 skills/inbound-from-domain/scripts/score.py --file skills/inbound-from-domain/examples/inbound-good.json
-# exit 0: a build-review route from the domain
+# exit 0: a high-touch route from the domain
 python3 skills/inbound-from-domain/scripts/score.py --file skills/inbound-from-domain/examples/inbound-crm-write.json
 # exit 1: a CRM write-back → set crm_write false
 ```
@@ -27,14 +27,14 @@ Part of the GTM operator suite: `/plugin install gtm@gtm-operator-skills` instal
 
 Add the [gtm-operator mod](https://github.com/cmj-hub/gtm-operator-claude-mod) to see the suite's next step above your prompt: `/plugin install gtm-operator@gtm-operator-skills`.
 
-Inbound-from-domain enrichment takes an inbound email, extracts the company domain, classifies it (corporate, free-mail, disposable, personal-looking), writes a short public-domain enrichment card, and routes the lead in seconds. Build review, Operator Pass, need-more, personal, or disqualify: without writing back to a CRM.
+Inbound-from-domain enrichment takes an inbound email, extracts the company domain, classifies it (corporate, free-mail, disposable, personal-looking), writes a short public-domain enrichment card, and routes the lead in seconds. high-touch, self-serve, need-more, personal, or disqualify: without writing back to a CRM.
 
-`alex@northwind.io` scores **build-review**. The same card with `crm_write: true` is **refused**. Python. No LLM. No paid API.
+`alex@northwind.io` scores **high-touch**. The same card with `crm_write: true` is **refused**. Python. No LLM. No paid API.
 
 The build guide teaches a human. The pack teaches an agent.
 
 <p align="center">
-  <img src="./assets/demo.gif" alt="Inbound from domain: corporate routes to build-review; CRM write-back fails" width="100%">
+  <img src="./assets/demo.gif" alt="Inbound from domain: corporate routes to high-touch; CRM write-back fails" width="100%">
 </p>
 
 ## What this replaces
@@ -76,7 +76,7 @@ python3 scripts/score.py --file examples/inbound-good.json
 python3 scripts/score.py --file examples/inbound-crm-write.json
 ```
 
-The good draft exits 0 and prints a `build-review` route from `northwind.io`. The CRM-write draft exits 1 and prints one `- what is wrong → what to change` line, then `Next: fix the lines above and run this again.` Free-mail routed to Build fails the same way. Add `--json` for one result object (`fixes` and `next` included). Then drop in yours at `gtm/inbound.json` in your project.
+The good draft exits 0 and prints a `high-touch` route from `northwind.io`. The CRM-write draft exits 1 and prints one `- what is wrong → what to change` line, then `Next: fix the lines above and run this again.` Free-mail routed to Build fails the same way. Add `--json` for one result object (`fixes` and `next` included). Then drop in yours at `gtm/inbound.json` in your project.
 
 ## What's in the pack
 
