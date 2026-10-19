@@ -2,7 +2,7 @@
 name: inbound-from-domain
 description: "Enrich inbound from the email domain and route in seconds. Classify corporate, free-mail, disposable, or personal-looking; write a route card; refuse CRM write-back in the free pack. Use when a form, reply, or lead arrives with an email and you need a Build / Operator Pass / personal / need-more / disqualify route before a human touches CRM."
 argument-hint: "[email or draft | score]"
-allowed-tools: Read Write Bash(python3 ${CLAUDE_SKILL_DIR}/scripts/score.py:*)
+allowed-tools: Read Write(./gtm/**) Bash(python3 ${CLAUDE_SKILL_DIR}/scripts/score.py:*)
 license: MIT
 models: ""
 ---
