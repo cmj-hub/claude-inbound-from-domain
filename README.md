@@ -66,6 +66,23 @@ npx skills add cmj-hub/claude-inbound-from-domain --skill '*' -g --full-depth -y
 
 Swap `claude-code` for `cursor`, `codex`, `grok`, `github-copilot`, `windsurf`, `cline`, or `opencode`. The scorer is Python in this repo. It does not call a paid API, and it does not write a CRM.
 
+### From npm
+
+The same pack is on npm as [`@jmc-gtm/claude-inbound-from-domain`](https://www.npmjs.com/package/@jmc-gtm/claude-inbound-from-domain), released from this repo's version tags with npm provenance. It has no dependencies and no install scripts.
+
+In a project, for any agent host the skills installer knows (`experimental_sync` is still marked experimental there):
+
+```bash
+npm install -D @jmc-gtm/claude-inbound-from-domain
+npx skills experimental_sync -a claude-code -y
+```
+
+In your own Claude Code plugin marketplace, point an entry at the package:
+
+```json
+{ "name": "inbound-from-domain", "source": { "source": "npm", "package": "@jmc-gtm/claude-inbound-from-domain" } }
+```
+
 ## What you walk out with in 15 minutes
 
 Artifact: `gtm/inbound.json` (start from `examples/inbound-good.json`).
