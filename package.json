@@ -1,19 +1,39 @@
 {
-  "name": "jmc-inbound-from-domain",
+  "name": "@jmc-gtm/claude-inbound-from-domain",
   "version": "0.1.0",
-  "description": "Inbound-from-domain enrichment takes an inbound email, extracts the company domain, classifies it, writes a short enrichment card, and routes the lead in seconds: without writing back to a CRM.",
+  "description": "Enrich inbound from the email domain and route in seconds. Refuse CRM write-back in the free pack. Deterministic, stdlib-only Python scorer. No network, no paid API.",
   "license": "MIT",
+  "author": "JMC Go-to-Market Systems",
+  "homepage": "https://github.com/cmj-hub/claude-inbound-from-domain#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cmj-hub/claude-inbound-from-domain.git"
+    "url": "git+https://github.com/cmj-hub/claude-inbound-from-domain.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cmj-hub/claude-inbound-from-domain/issues"
   },
   "keywords": [
     "agent-skills",
+    "claude-code",
+    "claude-plugin",
     "cursor-skills",
     "codex-skills",
     "inbound",
     "lead-routing",
     "email-domain",
-    "gtm"
-  ]
+    "gtm",
+    "enrichment",
+    "b2b"
+  ],
+  "files": [
+    ".claude-plugin",
+    "skills",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
 }
